@@ -1,0 +1,17 @@
+@startuml
+
+title Retail Sales ER Diagram
+
+entity "Retail Sales" as retail_sales {
+  * store_id : string
+  * sku : string
+  * date : date
+  --
+  units_sold : int
+  price : decimal
+  on_hand : int
+}
+
+
+@enduml
+
