@@ -30,13 +30,11 @@ logger = structlog.get_logger()
 class DataValidationError(Exception):
     """Custom exception for data validation failures"""
 
-    pass
 
 
 class SchemaValidationError(DataValidationError):
     """Custom exception for schema validation failures"""
 
-    pass
 
 
 class DataQualityMetrics:
@@ -155,7 +153,6 @@ class DataValidator:
         s3_bucket: str = "retail-data-validation-reports",
         fail_on_validation_error: bool = True,
     ):
-
         self.ge_data_context_root = ge_data_context_root
         self.s3_bucket = s3_bucket
         self.fail_on_validation_error = fail_on_validation_error

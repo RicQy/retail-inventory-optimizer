@@ -1,6 +1,5 @@
 """Basic tests to verify setup."""
 
-import pytest
 
 
 def test_sample_data(sample_data):

@@ -3,7 +3,6 @@
 
 import subprocess
 import sys
-from pathlib import Path
 
 
 def run_command(command: str, check: bool = True) -> subprocess.CompletedProcess:
@@ -26,10 +25,10 @@ def run_command(command: str, check: bool = True) -> subprocess.CompletedProcess
 def main() -> None:
     """Main setup function."""
     print("Setting up development environment...")
-    
+
     # Check if Poetry is available
     poetry_result = run_command("poetry --version", check=False)
-    
+
     if poetry_result.returncode == 0:
         print("Using Poetry for dependency management...")
         run_command("poetry install")
@@ -39,7 +38,7 @@ def main() -> None:
         run_command("pip install -r requirements.txt")
         run_command("pip install -r requirements-dev.txt")
         run_command("pre-commit install")
-    
+
     print("Development environment setup complete!")
     print("\nNext steps:")
     print("1. Activate your virtual environment")
