@@ -34,7 +34,8 @@ class ForecastingService:
 
     def train_prophet(self, data: pd.DataFrame) -> Prophet:
         # Model initialization and fitting
-        model = Prophet(country_holidays="US")
+        model = Prophet()
+        model.add_country_holidays(country_name='US')
         model.fit(data)
         logging.info("Prophet model trained successfully.")
         return model
