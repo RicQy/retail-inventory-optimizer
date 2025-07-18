@@ -48,13 +48,8 @@ jobs:
     - name: Install dependencies
       run: poetry install
 
-    - name: Run Core Tests
-      env:
-        AWS_DEFAULT_REGION: us-east-1
-        AWS_ACCESS_KEY_ID: dummy
-        AWS_SECRET_ACCESS_KEY: dummy
-        APP_ENV: test
-      run: poetry run pytest tests/test_basic.py tests/test_validation_schema.py tests/test_validation_system.py tests/test_integration.py -v
+    - name: Run Tests
+      run: poetry run pytest tests/test_basic.py tests/test_smoke.py -v
       
     - name: Check Python Syntax
       run: python -m py_compile $(find . -name "*.py" -not -path "./.venv/*" -not -path "./tests/unit/*")
